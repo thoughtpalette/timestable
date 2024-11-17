@@ -1,0 +1,14 @@
+<div class="container center grid grid-cols-13">
+    @if (isHeader) {
+        <div><p>x</p></div>
+        @for(option of options; track option) {
+            <div><p>{{option}}</p></div>
+        }
+    } @else {
+        <div><p>{{yAxisLabel}}</p></div>
+        @for(option of options; track option) {
+            <div><answer [base]="yAxisLabel" [option]="option"></answer></div>
+        }
+    }
+
+</div>
