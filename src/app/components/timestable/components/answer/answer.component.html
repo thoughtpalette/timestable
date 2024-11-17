@@ -1,1 +1,8 @@
-<button>{{answer}}</button>
+<div class="container" [class.revealed]="revealed">
+    @if (!revealed) {
+        <button class="question" (click)="revealAnswer()">{{option}}x{{base}}</button>
+    } @else {
+        <p>{{answer}}</p>
+    }
+    
+</div>

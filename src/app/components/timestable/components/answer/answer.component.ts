@@ -11,6 +11,11 @@ export class AnswerComponent implements OnInit {
   @Input() base = 0
   @Input() option = 0
   answer = 0
+  revealed = false
+
+  revealAnswer() {
+    this.revealed = true
+  }
 
   ngOnInit() {
     this.answer = this.base * this.option
