@@ -6,7 +6,10 @@ import { AnswerComponent } from '../answer/answer.component';
   standalone: true,
   templateUrl: './table-row.component.html',
   styleUrl: './table-row.component.scss',
-  imports: [AnswerComponent]
+  imports: [AnswerComponent],
+  host: {
+    class: 'row'
+  }
 })
 export class TableRowComponent {
   @Input() isHeader: boolean = false
