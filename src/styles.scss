@@ -1,5 +1,12 @@
 @import 'tailwindcss/base', 'tailwindcss/components', 'tailwindcss/utilities';
 
+html, body { height: 100%;}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
 .silkscreen {
   font-family: "Silkscreen", sans-serif;
   font-weight: 400;
