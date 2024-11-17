@@ -11,6 +11,7 @@ import { TimerCountPipe } from '../../../../pipes/timer-count.pipe';
 export class TimerComponent {
   timer?: ReturnType<typeof setInterval>
   time = 0
+  stopped = false
 
   start() {
     this.timer = setInterval(() => {
@@ -19,10 +20,12 @@ export class TimerComponent {
   }
 
   stop() {
+    this.stopped = true
     clearInterval(this.timer)
   }
 
   reset() {
-
+    this.time = 0
+    this.stopped = false
   }
 }

@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container font-bold">
     @if (time === 0) {
-        <button class="start-btn p-2 mr-4 border rounded" (click)="start()">Start</button>
+        <button class="start-btn p-2 mr-4 rounded bg-lime-500 hover:bg-lime-600 font-bold" (click)="start()">Start</button>
+    } @else if (!this.stopped && time !==0) {
+        <button class="stop-btn p-2 mr-4 rounded bg-rose-500 hover:bg-rose-600 font-bold" (click)="stop()">Stop</button>
     } @else {
-        <button class="stop-btn p-2 mr-4 border rounded" (click)="stop()">Stop</button>
-    } 
+        <button class="stop-btn p-2 mr-4 rounded bg-slate-300 hover:bg-slate-400 font-bold" (click)="reset()">Reset</button>
+    }
     {{time | timerCount}}
 </div>
