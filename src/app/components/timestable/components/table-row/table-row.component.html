@@ -1,11 +1,11 @@
 <div class="container center grid grid-cols-13">
     @if (isHeader) {
-        <div><p class="pr-5">x</p></div>
+        <div class="hidden sm:block"><p class="pr-5">x</p></div>
         @for(option of options; track option) {
-            <div class="header-label pr-0"><p>{{option}}</p></div>
+            <div class="header-label pr-0 hidden sm:block"><p>{{option}}</p></div>
         }
     } @else {
-        <div><p class="pr-5">{{yAxisLabel}}</p></div>
+        <div class="hidden sm:block"><p class="pr-5">{{yAxisLabel}}</p></div>
         @for(option of options; track option) {
             <div><answer [base]="yAxisLabel" [option]="option" /></div>
         }

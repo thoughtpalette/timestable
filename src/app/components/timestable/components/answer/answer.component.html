@@ -1,4 +1,4 @@
-<div class="container" [class.revealed]="revealed">
+<div class="container text-sm md:text-base" [class.revealed]="revealed">
     @if (!revealed) {
         <button class="question" (click)="revealAnswer()">{{option}}x{{base}}</button>
     } @else {
