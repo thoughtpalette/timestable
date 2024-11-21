@@ -1,31 +1,34 @@
 import { Component } from '@angular/core';
 import { TimerCountPipe } from '../../../../pipes/timer-count.pipe';
+import { TimerService } from '../../../../services/timer.service';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'timer',
   standalone: true,
-  imports: [TimerCountPipe],
+  imports: [TimerCountPipe, AsyncPipe],
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss'
 })
 export class TimerComponent {
-  timer?: ReturnType<typeof setInterval>
-  time = 0
-  stopped = false
+  time$: Observable<number>
+  stopped$: Observable<boolean>
+
+  constructor(private timerSvc: TimerService) {
+    this.time$ = this.timerSvc.time$
+    this.stopped$ = this.timerSvc.stopped$
+  }
 
   start() {
-    this.timer = setInterval(() => {
-      this.time++
-    }, 1000)
+    this.timerSvc.start()
   }
 
   stop() {
-    this.stopped = true
-    clearInterval(this.timer)
+    this.timerSvc.stop()
   }
 
   reset() {
-    this.time = 0
-    this.stopped = false
+    this.timerSvc.reset()
   }
 }

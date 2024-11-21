@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TimerComponent } from '../timer/timer.component';
 import { ResetService } from '../../../../services/reset.service';
+import { TimerService } from '../../../../services/timer.service';
 
 @Component({
   selector: 'actions',
@@ -11,9 +12,11 @@ import { ResetService } from '../../../../services/reset.service';
 })
 export class ActionsComponent {
 
-  constructor(private resetSvc: ResetService) {}
+  constructor(private resetSvc: ResetService, private timerSvc: TimerService) {}
 
   resetAnswers() {
+    this.timerSvc.stop()
+    this.timerSvc.reset()
     this.resetSvc.resetProblems()
   }
 }
