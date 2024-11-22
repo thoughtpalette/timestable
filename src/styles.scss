@@ -24,6 +24,9 @@ svg {
 }
 
 @media print {
-  .actions { display: none; }
-  .container .question { display: none; }
+  .actions, 
+  .container .question,
+  .container .answer { 
+    display: none; 
+  }
 }
