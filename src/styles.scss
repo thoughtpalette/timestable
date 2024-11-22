@@ -22,3 +22,8 @@ body > footer {
 svg {
   margin-right: 8px;
 }
+
+@media print {
+  .actions { display: none; }
+  .container .question { display: none; }
+}

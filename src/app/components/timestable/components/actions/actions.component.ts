@@ -19,4 +19,8 @@ export class ActionsComponent {
     this.timerSvc.reset()
     this.resetSvc.resetProblems()
   }
+
+  print() {
+    window.print()
+  }
 }
